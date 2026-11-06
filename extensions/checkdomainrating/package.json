@@ -1,0 +1,74 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "checkdomainrating",
+  "title": "CheckDomainRating.com",
+  "description": "See the 0 to 100 rating of any domain, the site in your browser, or a whole list from your clipboard.",
+  "icon": "icon.png",
+  "author": "RAYCAST_USERNAME",
+  "categories": [
+    "Developer Tools",
+    "Web"
+  ],
+  "keywords": [
+    "domain",
+    "rating",
+    "seo",
+    "backlinks",
+    "website"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "check-rating",
+      "title": "Check Rating",
+      "subtitle": "CheckDomainRating.com",
+      "description": "Show the rating of a domain you type, or of the site in your frontmost browser tab.",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "domain",
+          "placeholder": "example.com",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "rate-list",
+      "title": "Rate a List",
+      "subtitle": "CheckDomainRating.com",
+      "description": "Rate every domain or link on your clipboard, up to 1,000 at a time.",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "apiKey",
+      "title": "API Key",
+      "description": "Your free key from checkdomainrating.com. It starts with cdr_.",
+      "type": "password",
+      "required": true,
+      "placeholder": "cdr_..."
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^2.11.1",
+    "@raycast/utils": "^2.3.3"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.2.0",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"\\n\\nIt's not allowed to publish a Raycast extension to npm\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
